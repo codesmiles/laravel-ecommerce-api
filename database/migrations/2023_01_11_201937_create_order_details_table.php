@@ -21,8 +21,9 @@ return new class extends Migration
             $table->string(column: "address1", length:255);
             $table->string(column: "address2", length:255);
             $table->string(column: "city", length:255);
-            $table->string(column: "state", length:255);
-            $table->string(column: "zipcode", length:255);
+            $table->string(column: "state", length:45)->nullable();
+            $table->string(column: "zipcode", length:45);
+            $table->string(column: "country_code", length:3);
             $table->timestamps();
         });
     }
