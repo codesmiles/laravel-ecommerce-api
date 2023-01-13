@@ -14,9 +14,15 @@ export const useTaskStore = defineStore("task", {
         compliment() { 
             return this.name + " is the best";
         },
-        completedTasks() { 
-            return this.tasks.filter((task) => task.completed);
+        completedTasks:(state)=> { 
+            return state.tasks.filter((task) => task.completed); // return all tasks that are completed
         }
 
-    }
+    },
+    // actions are used to manipulate the state
+    actions: {
+        addTask(task){ 
+            this.tasks.push(task);
+        }
+    },
 });
